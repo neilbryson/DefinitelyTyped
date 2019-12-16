@@ -413,3 +413,10 @@ export interface SVGOverlayProps extends BaseControlProps {
 }
 
 export class SVGOverlay extends BaseControl<SVGOverlayProps, Element> {}
+
+export interface SourceProps extends MapboxGL.Source {
+    data?: GeoJSON.FeatureCollection;
+    id?: string;
+}
+
+export class Source extends React.PureComponent<SourceProps> {}

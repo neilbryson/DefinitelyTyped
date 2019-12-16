@@ -10,13 +10,29 @@ import {
     HTMLRedrawOptions,
     SVGRedrawOptions,
     StaticMap,
-    ViewportProps
+    ViewportProps,
+    Source
 } from 'react-map-gl';
 import * as MapboxGL from "mapbox-gl";
+import * as GeoJSON from "geojson";
 
 interface State {
     viewport: ViewportProps;
 }
+
+const geojson: GeoJSON.FeatureCollection = {
+    features: [
+        {
+            geometry: {
+                coordinates: [-122.4, 37.8],
+                type: "Point"
+            },
+            properties: null,
+            type: "Feature",
+        }
+    ],
+    type: "FeatureCollection"
+};
 
 class MyMap extends React.Component<{}, State> {
     readonly state: State = {
@@ -116,6 +132,7 @@ class MyMap extends React.Component<{}, State> {
                     width={400}
                     ref={this.setRefStatic}
                 />
+                <Source data={geojson} type="geojson" />
             </div>
         );
     }
