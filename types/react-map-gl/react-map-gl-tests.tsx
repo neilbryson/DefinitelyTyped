@@ -132,7 +132,7 @@ class MyMap extends React.Component<{}, State> {
                     width={400}
                     ref={this.setRefStatic}
                 />
-                <Source data={geojson} type="geojson" />
+                <Source id="my.source" data={geojson} type="geojson" />
             </div>
         );
     }

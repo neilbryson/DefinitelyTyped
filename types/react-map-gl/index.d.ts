@@ -4,6 +4,7 @@
 //                 Fabio Berta <https://github.com/fnberta>
 //                 Sander Siim <https://github.com/sandersiim>
 //                 Otto Urpelainen <https://github.com/oturpe>
+//                 Neil Bryson Cargamento <https://github.com/neilbryson>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 3.0
 
@@ -414,9 +415,8 @@ export interface SVGOverlayProps extends BaseControlProps {
 
 export class SVGOverlay extends BaseControl<SVGOverlayProps, Element> {}
 
-export interface SourceProps extends MapboxGL.Source {
-    data?: GeoJSON.FeatureCollection;
+export interface SourceProps {
     id?: string;
 }
 
-export class Source extends React.PureComponent<SourceProps> {}
+export class Source extends React.PureComponent<SourceProps & MapboxGL.AnySourceData> {}
